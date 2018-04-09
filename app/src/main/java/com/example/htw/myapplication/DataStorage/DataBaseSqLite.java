@@ -56,7 +56,7 @@ public class DataBaseSqLite extends SQLiteOpenHelper {
         contentValues.put(COL2 , name);
         contentValues.put(COL3 , surname);
         contentValues.put(COL4 , marks);
-        db.update(TABLE_NAME, contentValues, "ID = ?",new String [] {"id"} );
+        db.update(TABLE_NAME, contentValues, "ID = ?",new String [] {id} );
       return  true;
     }
 

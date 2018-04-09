@@ -37,6 +37,7 @@ public class SqLiteActivity extends AppCompatActivity {
         btnUpdateData = (Button)findViewById(R.id.dataBaseUpdate) ;
         addData();
         showDate ();
+        updateData ();
     }
     public void showDate (){
         btnShowData.setOnClickListener(new View.OnClickListener() {
