@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.htw.myapplication.Model.ModelHero;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 

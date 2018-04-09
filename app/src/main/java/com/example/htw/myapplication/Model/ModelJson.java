@@ -1,13 +1,13 @@
-package com.example.htw.myapplication;
+package com.example.htw.myapplication.Model;
 
-public class JsonModel
+public class ModelJson
 {
 
     private String name;
     private String surname;
     private String points;
 
-    public JsonModel(String name, String surname, String points) {
+    public ModelJson(String name, String surname, String points) {
         this.name = name;
         this.surname = surname;
         this.points = points;

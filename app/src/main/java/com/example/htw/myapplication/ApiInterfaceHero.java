@@ -1,5 +1,7 @@
 package com.example.htw.myapplication;
 
+import com.example.htw.myapplication.Model.ModelHero;
+
 import java.util.List;
 
 import retrofit2.Call;

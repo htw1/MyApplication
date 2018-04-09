@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.htw.myapplication.Model.ModelHero;
+
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.activeandroid.ActiveAndroid;
+
 
 public class SqLiteCrudActivity extends AppCompatActivity {
 

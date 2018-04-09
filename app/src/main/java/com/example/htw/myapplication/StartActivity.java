@@ -22,6 +22,7 @@ public class StartActivity extends AppCompatActivity {
 
     private void onSqLiteActitivtySimplyWay(View view) {
         Intent intent = new Intent(this, SqLiteCrudActivity.class);
+        startActivity(intent);
 
     }
 
