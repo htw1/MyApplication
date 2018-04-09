@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    android:id="@+id/main_layout"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.htw.myapplication.StartActivity"
+    android:gravity="center"
+    >
+
+
+    <TextView
+        android:textSize="35dp"
+        android:text="Witam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/login"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/login_btn"
+    />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_btn"
+        />
+
+    <Button
+        android:id="@+id/jsonFragmentButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/press_to_json_fragment"
+        />
+    <Button
+        android:id="@+id/sqLiteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/press_to_sqlite"
+        />
+    <Button
+        android:id="@+id/sqLiteButtonActivAndroid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sqlite CRUD  "
+        />
+
+
+
+</LinearLayout>
