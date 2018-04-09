@@ -60,6 +60,15 @@ public class DataBaseSqLite extends SQLiteOpenHelper {
       return  true;
     }
 
+    public boolean deleteData (String id)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.delete(TABLE_NAME,"ID = ?", new String[] {id});
+        return true;
+
+    }
+
 
 
 

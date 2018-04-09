@@ -18,7 +18,7 @@ public class SqLiteActivity extends AppCompatActivity {
     EditText editMarks;
     Button btnAddData;
     Button btnShowData;
-    Button btnUpdateData;
+    Button btnUpdateData, btnDelData;
     DataBaseSqLite myDataBase;
 
     @Override
@@ -35,10 +35,28 @@ public class SqLiteActivity extends AppCompatActivity {
         btnAddData = (Button) findViewById(R.id.dataBaseButton);
         btnShowData = (Button) findViewById(R.id.dataBaseShow);
         btnUpdateData = (Button)findViewById(R.id.dataBaseUpdate) ;
+        btnDelData = (Button)findViewById(R.id.dataBaseDel) ;
+
+
         addData();
         showDate ();
         updateData ();
+        delItemFromData ();
     }
+
+
+
+    public void delItemFromData ()
+    {
+        btnDelData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myDataBase.deleteData(editId.getText().toString());
+            }
+        });
+    }
+
+
     public void showDate (){
         btnShowData.setOnClickListener(new View.OnClickListener() {
             @Override
