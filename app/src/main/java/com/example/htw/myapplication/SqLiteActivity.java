@@ -67,6 +67,7 @@ public class SqLiteActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
                 boolean isInserted =  myDataBase.insertData(
                         editName.getText().toString(),
                         editSurname.getText().toString(),
