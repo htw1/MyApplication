@@ -32,7 +32,7 @@ public class SqLiteActivity extends AppCompatActivity {
         editName = (EditText) findViewById(R.id.dataBaseName);
         editSurname = (EditText) findViewById(R.id.dataBaseSurname);
         editMarks = (EditText) findViewById(R.id.dataBasemarks);
-        btnAddData = (Button) findViewById(R.id.dataBaseButton);
+        btnAddData = (Button) findViewById(R.id.dataBaseButtonSave);
         btnShowData = (Button) findViewById(R.id.dataBaseShow);
         btnUpdateData = (Button)findViewById(R.id.dataBaseUpdate) ;
         btnDelData = (Button)findViewById(R.id.dataBaseDel) ;
