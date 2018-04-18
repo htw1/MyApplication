@@ -1,5 +1,6 @@
 package com.example.htw.myapplication;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,8 +17,19 @@ public class StartActivity extends AppCompatActivity {
         findViewById(R.id.jsonFragmentButton).setOnClickListener(this::onJsonFragment);
         findViewById(R.id.sqLiteButton).setOnClickListener(this::onSqLiteActitivty);
         findViewById(R.id.sqLiteButtonActivAndroid).setOnClickListener(this::onSqLiteActitivtySimplyWay);
+        findViewById(R.id.gallery).setOnClickListener(this::onGallery);
+        findViewById(R.id.firebase).setOnClickListener(this::onFirebase);
 
+    }
 
+    private void onFirebase(View view) {
+        Intent intent = new Intent(this, FirebaseActivity.class);
+        startActivity(intent);
+    }
+
+    private void onGallery(View view) {
+        Intent intent = new Intent(this, GalleryActivityKotlin.class);
+        startActivity(intent);
     }
 
     private void onSqLiteActitivtySimplyWay(View view) {

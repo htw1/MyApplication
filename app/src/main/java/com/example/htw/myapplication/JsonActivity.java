@@ -7,6 +7,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.htw.myapplication.DataStorage.NetworkDataConnection;
 import com.example.htw.myapplication.Model.ModelHero;
 
 import java.util.List;

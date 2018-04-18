@@ -51,6 +51,18 @@
         android:layout_height="wrap_content"
         android:text="sqlite CRUD  "
         />
+    <Button
+        android:id="@+id/gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="gallery  "
+        />
+    <Button
+        android:id="@+id/firebase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="firebase  "
+        />
 
 
 

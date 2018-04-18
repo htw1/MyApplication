@@ -1,6 +1,12 @@
-package com.example.htw.myapplication;
+package com.example.htw.myapplication.DataStorage;
 
 import android.os.AsyncTask;
+import android.widget.ImageView;
+
+import com.example.htw.myapplication.GalleryActivityKotlin;
+import com.example.htw.myapplication.JsonActivity;
+import com.example.htw.myapplication.SqLiteRealmActivity;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,6 +20,7 @@ import java.net.URL;
 
 public class NetworkDataConnection extends AsyncTask <Void, Void,Void>{
 
+    ImageView someFoto;
     String savedDataFromJson = "";
     String parsedDataFromJson = "";
     String parsedSingleDataFromJson = "";
@@ -61,6 +68,7 @@ public class NetworkDataConnection extends AsyncTask <Void, Void,Void>{
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
         JsonActivity.TextFromJson.setText(parsedDataFromJson);
+
 
 
 

@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.htw.myapplication.Model.ModelHero;
 import com.squareup.picasso.Picasso;
 import java.util.List;
@@ -54,6 +55,8 @@ public class AdapterListViewForHero extends ArrayAdapter <ModelHero> {
         textViewName.setText(HerolistWithPossition.getName());
         textViewRealName.setText(HerolistWithPossition.getRealname());
         textViewDesc.setText(HerolistWithPossition.getBio());
+
+        //Glide.with(context).load(heroList.get(position).getImageurl()).into(imageView);
         Picasso.get().load(heroList.get(position).getImageurl()).into(imageView);
 
         return view;

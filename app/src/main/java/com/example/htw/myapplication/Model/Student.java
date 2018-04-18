@@ -27,9 +27,6 @@ public class Student extends RealmObject {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", marks=" + marks +
-                '}';
+        return "name" + name  + "marks=" + marks ;
     }
 }
