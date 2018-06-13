@@ -1,5 +1,4 @@
 <LinearLayout
-    android:paddingTop="?attr/actionBarSize"
     android:theme="@style/AppTheme.AppBarOverlay"
     android:id="@+id/fragment_navigation_drawer"
     android:background="#EEEE"
@@ -9,11 +8,19 @@
     android:layout_height="match_parent"
     tools:context="com.example.fragments.NavigationDrawerFragment">
 
-    <android.support.v7.widget.RecyclerView
+    <ImageView
+        android:src="@drawable/logo_braintri"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
 
+    </ImageView>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_gravity="center_horizontal"
         android:id="@+id/recyclerViewDrawer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
     </android.support.v7.widget.RecyclerView>
 

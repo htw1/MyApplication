@@ -1,4 +1,4 @@
-package com.example.htw.myapplication;
+package com.example.htw.myapplication.DataStorage;
 
 import com.example.htw.myapplication.Model.ModelHero;
 

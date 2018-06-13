@@ -6,11 +6,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.htw.myapplication.LoginActivity"
+    tools:context="com.example.htw.myapplication.Activity.LoginActivity"
     android:gravity="center_horizontal"
-    android:layout_marginTop="100dp"
-    >
 
+    >
+    <include layout="@layout/toolbar_main" />
 
     <ImageView
         android:id="@+id/imageUpload"
@@ -36,5 +36,11 @@
         android:text="Sign in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <com.google.android.gms.common.SignInButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </com.google.android.gms.common.SignInButton>
 
 </LinearLayout>

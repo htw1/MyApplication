@@ -3,9 +3,7 @@ package com.example.htw.myapplication.DataStorage;
 import android.os.AsyncTask;
 import android.widget.ImageView;
 
-import com.example.htw.myapplication.GalleryActivityKotlin;
-import com.example.htw.myapplication.JsonActivity;
-import com.example.htw.myapplication.SqLiteRealmActivity;
+import com.example.htw.myapplication.Activity.JsonActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;

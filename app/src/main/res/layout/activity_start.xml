@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/drawerLayout"
+    tools:context=".Activity.StartActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
 <LinearLayout
 
     android:id="@+id/main_layout"
@@ -8,14 +19,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.htw.myapplication.StartActivity"
-    android:gravity="center"
+    tools:context="com.example.htw.myapplication.Activity.StartActivity"
+    android:gravity="center_horizontal"
     >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
 
 
     <TextView
         android:textSize="35dp"
-        android:text="Witam"
+        android:text="LEARNING CONCEPT APP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -55,7 +80,7 @@
         android:id="@+id/gallery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="gallery  "
+        android:text="dagger  "
         />
     <Button
         android:id="@+id/firebase"
@@ -64,6 +89,23 @@
         android:text="firebase  "
         />
 
+    <Button
+        android:id="@+id/sunsetFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sendPhoto  "
+        />
+
 
 
 </LinearLayout>
+    <fragment
+        android:id="@+id/fragment_navigation_drawer_inactivity_main"
+        android:layout_gravity="start"
+        tools:layout="@layout/fragment_navigation_drawer"
+        app:layout="@layout/fragment_navigation_drawer"
+        android:name="com.example.htw.myapplication.Fragments.NavigationDrawerFragment"
+        android:layout_width="@dimen/nav_draw_width"
+        android:layout_height="match_parent">
+    </fragment>
+</android.support.v4.widget.DrawerLayout>

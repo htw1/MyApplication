@@ -1,4 +1,4 @@
-package com.example.htw.myapplication;
+package com.example.htw.myapplication.Activity;
 
 import android.database.Cursor;
 import android.support.v7.app.AlertDialog;
@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.htw.myapplication.DataStorage.DataBaseSqLite;
+import com.example.htw.myapplication.R;
 
 public class SqLiteActivity extends AppCompatActivity {
     EditText editId;

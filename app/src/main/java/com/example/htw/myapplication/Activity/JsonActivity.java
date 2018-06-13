@@ -1,4 +1,4 @@
-package com.example.htw.myapplication;
+package com.example.htw.myapplication.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,7 +7,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.htw.myapplication.DataStorage.ApiInterfaceHero;
 import com.example.htw.myapplication.DataStorage.NetworkDataConnection;
+import com.example.htw.myapplication.R;
+import com.example.htw.myapplication.adapter.AdapterListViewForHero;
 import com.example.htw.myapplication.Model.ModelHero;
 
 import java.util.List;

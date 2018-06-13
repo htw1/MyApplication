@@ -1,4 +1,4 @@
-package com.example.htw.myapplication;
+package com.example.htw.myapplication.adapter;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.htw.myapplication.Model.ModelHero;
+import com.example.htw.myapplication.R;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 

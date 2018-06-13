@@ -1,5 +1,4 @@
-package com.example.htw.myapplication;
-import android.content.Intent;
+package com.example.htw.myapplication.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,11 +9,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.htw.myapplication.Model.Student;
+import com.example.htw.myapplication.R;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
-
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 public class SqLiteRealmActivity extends AppCompatActivity  {
 
@@ -34,12 +32,20 @@ public class SqLiteRealmActivity extends AppCompatActivity  {
         txtToShow = (TextView) findViewById(R.id.txtShowData);
         editName = (EditText) findViewById(R.id.dataBaseName);
         editMarks = (EditText) findViewById(R.id.dataBasemarks);
-        findViewById(R.id.dataBaseButtonSave).setOnClickListener(this::saveData);
+        btnSaveData = (Button) findViewById(R.id.dataBaseButtonSave);
+/*        btnSaveData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveData();
+                ShowData ();
+            }
+        });*/
+        findViewById(R.id.dataBaseButtonSave).setOnClickListener(this::saveDataButton);
+
+
     }
 
-    private void saveData(View view) {
-
-        //writeToDataBase (editName.getText().toString(), Integer.parseInt(editMarks.getText().toString().trim()));
+    private void saveDataButton(View view) {
         saveData();
         ShowData ();
     }
@@ -98,14 +104,14 @@ public class SqLiteRealmActivity extends AppCompatActivity  {
 
     private void ShowData() {
         final RealmResults<Student> studentsArray = realm.where(Student.class).findAll();
-        studentsArray.size(); // => 0 because no dogs have been added to the Realm yet
+        studentsArray.size(); // => 0 because no students have been added to the Realm yet
         String output = "";
 
 // Persist your data in a transaction
         realm.beginTransaction();
 
         for (Student temp : studentsArray  ){
-            output = output + studentsArray;
+            output += temp.toString();
         }
         txtToShow.setText(output);
 

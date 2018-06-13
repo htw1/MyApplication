@@ -1,4 +1,4 @@
-package com.example.htw.myapplication;
+package com.example.htw.myapplication.Activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.htw.myapplication.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.ChildEventListener;
@@ -24,43 +25,42 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-
 import java.util.ArrayList;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class FirebaseActivity extends AppCompatActivity {
 
-
-
-
-    DatabaseReference rootReferance = FirebaseDatabase.getInstance().getReference();
     DatabaseReference rootRefUsers = FirebaseDatabase.getInstance().getReferenceFromUrl("https://myapplication-fb899.firebaseio.com/Users");
 
     private ArrayList <String> listArray = new ArrayList<>();
 
+    String NamefromEditText;
+    String KeyFromEditText;
 
-
-
-
-    @BindView  (R.id.editTextFirebaseName)
     EditText editTextName;
-
-    @BindView  (R.id.editTextFirebaseKey)
     EditText editTextKey;
 
-    @OnClick(R.id.sendDada)
-    public void addDataToFirebase()
-    {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_firebase);
+
+        editTextName =  findViewById(R.id.editTextFirebaseName);
+        editTextKey =findViewById (R.id.editTextFirebaseKey);
+
+        findViewById(R.id.sendDada).setOnClickListener(this::sendData);
+
+    }
+
+    private void sendData(View view) {
 
         ArrayAdapter <String> arrayListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,listArray);
 
-       String NamefromEditText = editTextName.getText().toString().trim();
-       String KeyFromEditText = editTextKey.getText().toString().trim();
+        NamefromEditText = editTextName.getText().toString().trim();
+        KeyFromEditText = editTextKey.getText().toString().trim();
 
-       DatabaseReference addUser  = rootRefUsers.child(KeyFromEditText);
-       addUser.setValue(NamefromEditText);
+        DatabaseReference addUser  = rootRefUsers.child(KeyFromEditText);
+        addUser.setValue(NamefromEditText);
 
         rootRefUsers.addChildEventListener(new ChildEventListener() {
             @Override
@@ -70,7 +70,7 @@ public class FirebaseActivity extends AppCompatActivity {
 
                 listArray.add(value);
                 arrayListAdapter.notifyDataSetChanged();
-
+                Toast.makeText(FirebaseActivity.this, "DATA SENT", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -93,19 +93,6 @@ public class FirebaseActivity extends AppCompatActivity {
 
             }
         });
-
-
-    };
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_firebase);
-        ButterKnife.bind(this);
-
-
-
-
     }
 
 

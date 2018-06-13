@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity implements  Communicator{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
 
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         NavigationDrawerFragment navigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer_inactivity_main);
         // passing toolbar from MainActivity TO NavigationDrawerFragment
         navigationDrawerFragment.setUp(R.id.fragment_navigation_drawer_inactivity_main,(DrawerLayout)findViewById(R.id.drawerLayout), toolbar );

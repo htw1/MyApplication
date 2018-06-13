@@ -7,8 +7,6 @@ public class Student extends RealmObject {
     String name;
     int marks;
 
-
-
     public String getName() {
         return name;
     }

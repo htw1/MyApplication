@@ -1,5 +1,11 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'realm-android'
+
+
+def daggerVersion = '2.13'
 
 android {
     compileSdkVersion 27
@@ -29,10 +35,18 @@ android {
     }
 }
 
-dependencies {
-    compile 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.jakewharton:butterknife:9.0.0-SNAPSHOT'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-SNAPSHOT'
+
+    compile 'org.greenrobot:eventbus:3.1.1'
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+
+    compile 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'com.github.bumptech.glide:glide:4.6.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.google.android.gms:play-services-ads:12.0.1'
@@ -40,9 +54,12 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:12.0.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
 
+    // RETROFIT
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.2.0'
 
+    implementation 'com.android.support:cardview-v7:27.1.0'
+    implementation 'com.android.support:recyclerview-v7:27.1.0'
     implementation 'com.android.support:design:27.1.0'
     implementation 'com.android.support:support-v4:27.1.0'
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -50,10 +67,13 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:27.1.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support.constraint:constraint-layout:1.1.0'
+
+    // KOTLIN
     testCompile 'junit:junit:4.12'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
+    //FIREBASE
     compile 'com.google.firebase:firebase-core:12.0.1'
     compile 'com.google.firebase:firebase-database:12.0.1'
     compile 'com.google.firebase:firebase-crash:12.0.1'
@@ -61,11 +81,21 @@ dependencies {
     compile 'com.google.firebase:firebase-messaging:12.0.1'
     compile 'com.google.firebase:firebase-storage:12.0.1'
 
+    implementation 'com.firebaseui:firebase-ui-database:3.3.0'
+
     implementation 'pub.devrel:easypermissions:1.2.0'
+
+    // Dagger core
+    compile 'com.google.dagger:dagger:2.14.1'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.14.1'
+
+    //to enable DaggerActivity, DaggerBroadcastReceiver, DaggerFragment etc classes
+    compile 'com.google.dagger:dagger-android:2.14.1'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.14.1'
+
+    //support libraries with dagger 2
+    compile 'com.google.dagger:dagger-android-support:2.14.1'
 }
-
-
 apply plugin: 'com.google.gms.google-services'
 
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+
