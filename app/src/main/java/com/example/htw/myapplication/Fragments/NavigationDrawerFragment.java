@@ -82,7 +82,7 @@ public class NavigationDrawerFragment extends Fragment {
         List <RecyclerNavDrawModel> dataArrayOfNavModel = new ArrayList <>();
 
         int  icon [] = {R.drawable.ic_group_black_24dp,R.drawable.ic_group_black_24dp, R.drawable.ic_group_black_24dp };
-        String title [] = {"1", "2", "3"};
+        String title [] = {"Luciano Pavarotti", "Andrea Bocelli  ", "Plácido Domingo  "};
 
         for (int i=0; i<100; i++) {
 

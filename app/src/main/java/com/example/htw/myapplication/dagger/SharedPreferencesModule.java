@@ -29,4 +29,10 @@ public class SharedPreferencesModule {
     SharedPreferences provideSharedPreferences() {
         return context.getSharedPreferences("PrefName",Context.MODE_PRIVATE);
     }
+
+    @Singleton
+    @Provides
+    MySharedPreferences provideMySharedPreferences(SharedPreferences sharedPreferences) {
+                return new MySharedPreferences(sharedPreferences);
+            }
 }

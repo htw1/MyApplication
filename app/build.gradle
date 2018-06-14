@@ -4,21 +4,17 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'realm-android'
 
-
-def daggerVersion = '2.13'
-
 android {
     compileSdkVersion 27
     buildToolsVersion '27.0.3'
     defaultConfig {
+        multiDexEnabled true
         applicationId 'com.example.htw.mytestapp'
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
-        0
     }
     buildTypes {
         release {
@@ -26,7 +22,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    0
     compileOptions {
         targetCompatibility 1.8
         sourceCompatibility 1.8
@@ -34,10 +29,21 @@ android {
     productFlavors {
     }
 }
-
-
-
 dependencies {
+/*    def htextview_version = "0.1.6"
+
+    implementation"com.hanks:htextview-base:$htextview_version"
+    implementation "com.hanks:htextview-typer:$htextview_version"
+    implementation "com.hanks:htextview-rainbow:$htextview_version"
+    implementation "com.hanks:htextview-fade:$htextview_version"
+    implementation "com.hanks:htextview-evaporate:$htextview_version"
+    implementation "com.hanks:htextview-scale:$htextview_version"*/
+
+    compile 'hanks.xyz:htextview-library:0.1.5'
+
+    implementation 'com.android.support:multidex:1.0.3'
+
+    compile 'com.rengwuxian.materialedittext:library:2.1.4'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.jakewharton:butterknife:9.0.0-SNAPSHOT'
@@ -95,6 +101,9 @@ dependencies {
 
     //support libraries with dagger 2
     compile 'com.google.dagger:dagger-android-support:2.14.1'
+
+    implementation 'com.google.dagger:dagger:2.14.1'
+    kapt 'com.google.dagger:dagger-compiler:2.14.1'
 }
 apply plugin: 'com.google.gms.google-services'
 

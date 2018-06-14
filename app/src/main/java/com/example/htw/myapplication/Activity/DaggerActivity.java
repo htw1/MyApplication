@@ -10,17 +10,18 @@ import android.widget.TextView;
 
 import com.example.htw.myapplication.DataStorage.MyApplication;
 import com.example.htw.myapplication.R;
-import com.example.htw.myapplication.dagger.DaggerApplication;
-import com.example.htw.myapplication.dagger.MyComponent;
+import com.example.htw.myapplication.dagger.ApplicationComponent;
 import com.example.htw.myapplication.dagger.MySharedPreferences;
+
+import javax.inject.Inject;
 
 public class DaggerActivity extends AppCompatActivity {
 
+    @Inject
     MySharedPreferences mySharedPreferences;
-    MyComponent myComponent;
+
 
     TextView textView;
-    Button button;
     EditText editText;
     public static final String PREFERENCES_KEY = "my_key";
 
@@ -29,21 +30,20 @@ public class DaggerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dagger);
 
-/*        ((MyApplication)getApplicationContext()).getMyComponent().inject(this);*/
-
-
-
+        ((MyApplication)getApplicationContext()).getComponent().inject(this);
 
         textView = (TextView) findViewById(R.id.daggerTextView);
         editText = (EditText) findViewById(R.id.daggerEditText);
         findViewById(R.id.daggerButton).setOnClickListener(this::saveData);
 
     }
-
+      // DAGGER WORK
     private void saveData(View view) {
         String valueFromEditText = editText.getText().toString();
+        mySharedPreferences.putData(PREFERENCES_KEY,valueFromEditText );
 
-
+        String lastValue = mySharedPreferences.getData(PREFERENCES_KEY);
+        textView.setText(lastValue);
 
     }
 }

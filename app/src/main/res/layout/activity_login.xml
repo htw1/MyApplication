@@ -13,31 +13,53 @@
     <include layout="@layout/toolbar_main" />
 
     <ImageView
+        android:layout_marginTop="15dp"
         android:id="@+id/imageUpload"
         android:background="@drawable/ic_account_circle_black_24px"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:layout_width="180dp"
+        android:layout_height="180dp" />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
+        app:met_floatingLabel="highlight"
+        app:met_baseColor="@color/colorPrimaryDark"
+        app:met_primaryColor="@color/colorPrimaryDark"
+        app:met_errorColor="#ddaa00"
         android:id="@+id/emailSign"
         android:hint="@string/action_sign_in"
-        android:layout_width="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <EditText
-        android:id="@+id/passSing"
-        android:hint="@string/prompt_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/button_login"
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_marginTop="15dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        app:met_baseColor="@color/colorPrimaryDark"
+        app:met_primaryColor="@color/colorPrimaryDark"
+        app:met_errorColor="#ddaa00"
+        android:id="@+id/passSing"
+        android:hint="password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.example.htw.myapplication.control.ButtonPlus
+        style="@style/buttonLight"
+        android:textSize="18dp"
+        android:textColor="@color/white"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/button_round"
+        android:id="@+id/button_login"
+        android:layout_marginTop="25dp"
         android:text="Sign in"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <com.google.android.gms.common.SignInButton
+
+        android:layout_marginTop="15dp"
+        android:id="@+id/button_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 

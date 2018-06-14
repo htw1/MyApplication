@@ -1,22 +1,27 @@
 package com.example.htw.myapplication.DataStorage;
 
 import android.app.Application;
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 
-import com.example.htw.myapplication.dagger.MyComponent;
+import com.example.htw.myapplication.dagger.ApplicationComponent;
+
+import com.example.htw.myapplication.dagger.DaggerApplicationComponent;
 import com.example.htw.myapplication.dagger.SharedPreferencesModule;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
-public class MyApplication extends Application {
+public class MyApplication extends MultiDexApplication {
 
-  private MyComponent component;
+
+
+  private ApplicationComponent component;
 
   @Override
   public void onCreate() {
     super.onCreate();
-    // The default Realm file is "default.realm" in Context.getFilesDir();
-    // we'll change it to "myrealm.realm"
+
     Realm.init(this);
     RealmConfiguration config = new RealmConfiguration.Builder()
             .name("myrealm.realm")
@@ -25,15 +30,12 @@ public class MyApplication extends Application {
     Realm.setDefaultConfiguration(config);
 
 
-
-      component = DaggerMyComponent.builder()
+      component = DaggerApplicationComponent.builder()
               .sharedPreferencesModule(new SharedPreferencesModule(getApplicationContext()))
               .build();
-
-/*    public MyComponent getMyComponent() {
-      return component;
-
-  }*/
-
   }
+  public ApplicationComponent getComponent() {
+    return component;
+  }
+
 }

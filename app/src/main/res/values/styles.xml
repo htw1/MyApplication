@@ -22,4 +22,22 @@
 
 
 
+    <style name="RobotoRegular"><item name="customFont">Roboto_Regular.ttf</item></style>
+    <style name="RobotoLight"><item name="customFont">Roboto_Light.ttf</item></style>
+    <style name="RobotoThin"><item name="customFont">Roboto_Thin.ttf</item></style>
+
+    <style name="TextRegular" parent="RobotoRegular"></style>
+    <style name="TextLight" parent="RobotoLight"></style>
+    <style name="TextThin" parent="RobotoThin"></style>
+
+    <!--BUTTONS-->
+    <style name="buttonRegular" parent="@android:style/Widget.Button">
+        <item name="fontName">Roboto_Regular.ttf</item>
+    </style>
+    <style name="buttonLight" parent="@android:style/Widget.Button">
+        <item name="fontName">Roboto_Light.ttf</item>
+    </style>
+
+
+
 </resources>

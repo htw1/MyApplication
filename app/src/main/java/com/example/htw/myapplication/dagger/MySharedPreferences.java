@@ -1,23 +1,20 @@
 package com.example.htw.myapplication.dagger;
-
 import android.content.SharedPreferences;
 
-import javax.inject.Inject;
 
 public class MySharedPreferences {
 
     private SharedPreferences mSharedPreferences;
 
-    @Inject
-    public MySharedPreferences(SharedPreferences mSharedPreferences) {
+    MySharedPreferences(SharedPreferences mSharedPreferences) {
         this.mSharedPreferences = mSharedPreferences;
     }
 
-    public void putData(String key, int data) {
-        mSharedPreferences.edit().putInt(key,data).apply();
+    public void putData(String key, String data) {
+        mSharedPreferences.edit().putString(key,data).apply();
     }
 
-    public int getData(String key) {
-        return mSharedPreferences.getInt(key,0);
+    public String getData(String key) {
+        return mSharedPreferences.getString(key,"");
     }
 }

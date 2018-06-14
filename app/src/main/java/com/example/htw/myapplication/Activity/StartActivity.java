@@ -1,15 +1,21 @@
 package com.example.htw.myapplication.Activity;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-
 import com.example.htw.myapplication.Fragments.NavigationDrawerFragment;
 import com.example.htw.myapplication.R;
+import com.example.htw.myapplication.control.FontManager;
+import com.hanks.htextview.HTextView;
+import com.hanks.htextview.HTextViewType;
+
 
 public class StartActivity extends AppCompatActivity {
+
+    HTextView animationSample;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +40,20 @@ public class StartActivity extends AppCompatActivity {
         findViewById(R.id.gallery).setOnClickListener(this::onGallery);
         findViewById(R.id.firebase).setOnClickListener(this::onFirebase);
         findViewById(R.id.sunsetFoto).setOnClickListener(this::onFirebasePhoto);
+
+        final AssetManager getAssetsMethod = getApplicationContext().getAssets();
+
+        animationSample = findViewById(R.id.textView2);
+
+
+        animationSample.postDelayed(new Runnable() {
+            public void run() {
+                animationSample.setTypeface(FontManager.getInstance(getAssetsMethod).getFont("Roboto_Light.ttf"));
+                animationSample.setAnimateType(HTextViewType.TYPER);
+                animationSample.animateText("New Concepts Development");
+
+            }
+        }, 800);
 
     }
 
@@ -79,6 +99,9 @@ public class StartActivity extends AppCompatActivity {
     private void onLogin(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
-
     }
+
+
+
+
 }

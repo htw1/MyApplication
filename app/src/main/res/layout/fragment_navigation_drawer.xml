@@ -1,8 +1,9 @@
 <LinearLayout
+
     android:orientation="vertical"
         android:theme="@style/AppTheme.AppBarOverlay"
     android:id="@+id/fragment_navigation_drawer"
-    android:background="#EEEE"
+    android:background="#FAFAFA"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -19,11 +20,15 @@
     </ImageView>
 
     <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
         android:layout_gravity="center_horizontal"
         android:id="@+id/recyclerViewDrawer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </android.support.v7.widget.RecyclerView>
+
+
 
 </LinearLayout>

@@ -73,7 +73,7 @@ public class NavDrawAdapter extends RecyclerView.Adapter<NavDrawAdapter.MyViewHo
 
             textView = itemView.findViewById(R.id.txt_nav_drawer_custom_row);
             image = itemView.findViewById(R.id.image_nav_drawer_custom_row);
-            itemView.findViewById(R.id.image_nav_drawer_custom_row).setOnClickListener(this::clickForshowCounter);
+            itemView.findViewById(R.id.txt_nav_drawer_custom_row).setOnClickListener(this::clickForshowCounter);
             itemView.findViewById(R.id.image_nav_drawer_delete_item).setOnClickListener(this::clickForDelete);
 
 
