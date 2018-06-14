@@ -18,75 +18,8 @@
     android:id="@+id/activity_main_contn"
     tools:ignore="ExtraText">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <fragment
-        android:name="com.example.fragments.FragmentA"
-        android:layout_marginTop="150dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </fragment>
-
-    <fragment
-        android:layout_marginTop="250dp"
-        android:id="@+id/idFragmentFromActivity"
-        android:name="com.example.fragments.FragmentB"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </fragment>
-
-
-    <LinearLayout
-
-        android:layout_below="@id/idFragmentFromActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <EditText
-                android:id="@+id/editText"
-                android:hint="Wpisz imię"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        <Button
-            android:layout_margin="2dp"
-            android:id="@+id/save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:text="save" />
-    <Button
-        android:layout_margin="2dp"
-        android:id="@+id/buttonNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:text="Next activity" />
-    </LinearLayout>
 
 </RelativeLayout>
 
-    <fragment
-        android:id="@+id/fragment_navigation_drawer_inactivity_main"
-        android:layout_gravity="start"
-        tools:layout="@layout/fragment_navigation_drawer"
-        app:layout="@layout/fragment_navigation_drawer"
-        android:name="com.example.fragments.NavigationDrawerFragment"
-        android:layout_width="@dimen/nav_draw_width"
-        android:layout_height="match_parent">
-    </fragment>
+
 </android.support.v4.widget.DrawerLayout>
