@@ -11,9 +11,11 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/image"
+
+        android:id="@+id/imageFirebase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
         android:src="@drawable/image_pattern">
 
     </ImageView>
@@ -29,7 +31,6 @@
 
     <TextView
         android:layout_marginTop="5dp"
-
         android:text="desc"
         android:id="@+id/photo_desc"
         android:layout_width="match_parent"

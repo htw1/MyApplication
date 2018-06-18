@@ -8,9 +8,6 @@ import android.view.View;
 import android.widget.ImageView;
 import com.example.htw.myapplication.R;
 import com.google.firebase.auth.FirebaseAuth;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class ShopActivity extends AppCompatActivity {
 

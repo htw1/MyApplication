@@ -120,7 +120,7 @@ public class LoginActivity extends AppCompatActivity implements EasyPermissions.
                     mProgress.dismiss();
                     // startActivity(new Intent(, LoginActivity.class));
 
-                    Uri downloadUri = taskSnapshot.getDownloadUrl();
+                    //Uri downloadUri = taskSnapshot.getDownloadUrl();
                     //Picasso
                 }
             }).addOnFailureListener(new OnFailureListener() {

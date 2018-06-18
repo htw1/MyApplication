@@ -33,9 +33,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -43,6 +40,8 @@ public class AddNewPhotoActivity extends AppCompatActivity {
 
     String mCurrentPhotoPath;
     Uri photoURI;
+
+
 
     private ProgressDialog mProgress;
     public static final int REQUEST_TAKE_PHOTO = 1;
@@ -63,6 +62,8 @@ public class AddNewPhotoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_photo);
         mProgress = new ProgressDialog(this);
+
+
 
         findViewById(R.id.addPhotoButton).setOnClickListener(this::addPhotoButton);
         imageButton = findViewById(R.id.addPhoto);
@@ -163,7 +164,7 @@ public class AddNewPhotoActivity extends AppCompatActivity {
 
 
 
-                    Uri downloadUri = taskSnapshot.getDownloadUrl();
+                   // Uri downloadUri = taskSnapshot.getDownloadUrl();
                     //Picasso
                 }
             }).addOnFailureListener(new OnFailureListener() {
