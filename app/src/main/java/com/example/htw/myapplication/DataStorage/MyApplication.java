@@ -22,6 +22,8 @@ public class MyApplication extends MultiDexApplication {
   public void onCreate() {
     super.onCreate();
 
+
+
     Realm.init(this);
     RealmConfiguration config = new RealmConfiguration.Builder()
             .name("myrealm.realm")

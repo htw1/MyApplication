@@ -11,6 +11,7 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,8 +21,10 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.htw.myapplication.R;
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -30,6 +33,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -42,7 +46,7 @@ public class AddNewPhotoActivity extends AppCompatActivity {
     Uri photoURI;
 
 
-
+    private String uploadImageUrl;
     private ProgressDialog mProgress;
     public static final int REQUEST_TAKE_PHOTO = 1;
     public static final int REQUEST_PERMS = 123;
@@ -63,7 +67,7 @@ public class AddNewPhotoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_new_photo);
         mProgress = new ProgressDialog(this);
 
-
+        //url_db = FirebaseDatabase.getInstance().getReference().child("Url");
 
         findViewById(R.id.addPhotoButton).setOnClickListener(this::addPhotoButton);
         imageButton = findViewById(R.id.addPhoto);
@@ -90,7 +94,8 @@ public class AddNewPhotoActivity extends AppCompatActivity {
             DatabaseReference newPostDatabase = dataBAseFirebase.push();
             newPostDatabase.child("title").setValue(title_name_val);
             newPostDatabase.child("desc").setValue(desc_val);
-            newPostDatabase.child("image").setValue(photoURI.toString());
+            newPostDatabase.child("url_link").setValue(uploadImageUrl);
+
             findViewById(R.id.addPhotoButton).setEnabled(false);
             Toast.makeText(this, "Good JOB !", Toast.LENGTH_LONG).show();
             startActivity(new Intent(AddNewPhotoActivity.this, PhotoActivity.class));
@@ -157,14 +162,25 @@ public class AddNewPhotoActivity extends AppCompatActivity {
             filepatch.putFile(photoURI).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                    filepatch.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            Uri downloadUrl = uri;
+                            uploadImageUrl = downloadUrl.toString();
+                            Log.i("photoURI",uploadImageUrl ) ;
+                        }
+                    });
+
+
+
                     Toast.makeText(AddNewPhotoActivity.this, "foto send" +
                             "  to server !", Toast.LENGTH_SHORT).show();
                     mProgress.dismiss();
                     // startActivity(new Intent(, LoginActivity.class));
 
 
-
-                   // Uri downloadUri = taskSnapshot.getDownloadUrl();
+                   //Uri downloadUri = taskSnapshot.getDownloadUrl();
                     //Picasso
                 }
             }).addOnFailureListener(new OnFailureListener() {

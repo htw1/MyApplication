@@ -9,6 +9,7 @@ import android.view.View;
 import com.example.htw.myapplication.Fragments.NavigationDrawerFragment;
 import com.example.htw.myapplication.R;
 import com.example.htw.myapplication.control.FontManager;
+import com.example.htw.myapplication.control.GlideApp;
 import com.hanks.htextview.HTextView;
 import com.hanks.htextview.HTextViewType;
 
@@ -21,8 +22,6 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-
-        //GlideApp.with(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

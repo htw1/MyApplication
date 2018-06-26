@@ -59,6 +59,8 @@ public class AdapterListViewForHero extends ArrayAdapter <ModelHero> {
 
         //Glide.with(context).load(heroList.get(position).getImageurl()).into(imageView);
         Picasso.get().load(heroList.get(position).getImageurl()).into(imageView);
+        // test picasso
+        //Picasso.with(getContext()).load(heroList.get(position).getImageurl()).into(imageView);
 
         return view;
     }

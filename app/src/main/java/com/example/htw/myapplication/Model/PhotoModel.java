@@ -8,12 +8,12 @@ import com.google.firebase.database.PropertyName;
 public class PhotoModel {
 
     @Exclude private String desc;
-    @Exclude private String image;
+    @Exclude private String url_link;
     @Exclude private String  title;
 
-    public PhotoModel(String desc, String image, String title) {
+    public PhotoModel(String desc, String url_link, String title) {
         this.desc = desc;
-        this.image = image;
+        this.url_link = url_link;
         this.title = title;
     }
     //firebase
@@ -30,12 +30,12 @@ public class PhotoModel {
     }
 
     @Keep
-    public String getImage() {
-        return image;
+    public String getUrl_link() {
+        return url_link;
     }
     @Keep
-    public void setImage(String image) {
-        this.image = image;
+    public void setUrl_link(String image) {
+        this.url_link = image;
     }
 
 

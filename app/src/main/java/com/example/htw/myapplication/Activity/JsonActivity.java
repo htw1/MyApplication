@@ -36,9 +36,6 @@ public class JsonActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listViewHero);
         findViewById(R.id.button_json).setOnClickListener(this::jsonButton);
 
-
-        // RETROFIT
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(ApiInterfaceHero.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())

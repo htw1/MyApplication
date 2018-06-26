@@ -36,16 +36,8 @@ android {
     }
 }
 dependencies {
-/*    def htextview_version = "0.1.6"
 
-    implementation"com.hanks:htextview-base:$htextview_version"
-    implementation "com.hanks:htextview-typer:$htextview_version"
-    implementation "com.hanks:htextview-rainbow:$htextview_version"
-    implementation "com.hanks:htextview-fade:$htextview_version"
-    implementation "com.hanks:htextview-evaporate:$htextview_version"
-    implementation "com.hanks:htextview-scale:$htextview_version"*/
-
-    compile 'hanks.xyz:htextview-library:0.1.5'
+  compile 'hanks.xyz:htextview-library:0.1.5'
 
     implementation 'com.android.support:multidex:1.0.3'
 
@@ -53,23 +45,21 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-
     compile 'org.greenrobot:eventbus:3.1.1'
     implementation "android.arch.lifecycle:extensions:1.1.1"
 
     compile 'com.squareup.okhttp3:okhttp:3.10.0'
 
-
-    //compile 'com.github.bumptech.glide:glide:3.7.0'
+    kapt 'com.github.bumptech.glide:compiler:4.7.1'
     implementation 'com.github.bumptech.glide:glide:4.7.1'
     implementation 'com.github.bumptech.glide:annotations:4.7.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
 
-/*    implementation 'com.github.bumptech.glide:glide:4.6.1'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'*/
-
     implementation 'com.squareup.picasso:picasso:2.71828'
+    //compile 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
 
+
+    implementation 'com.android.support:support-core-utils:27.1.1'
     implementation 'com.google.android.gms:play-services-ads:15.0.1'
     implementation 'com.google.android.gms:play-services-auth:15.0.1'
 
@@ -103,6 +93,7 @@ dependencies {
 
     implementation 'com.firebaseui:firebase-ui-database:4.0.1'
     implementation 'com.firebaseui:firebase-ui-storage:4.0.1'
+    //implementation'com.firebaseui:firebase-ui-storage:2.0.1'
 
     implementation 'pub.devrel:easypermissions:1.2.0'
 
